@@ -4,6 +4,13 @@
 
 ## Build Setup
 
+# !!
+If you are having problems for the eslint, try the following commands in your project file:
+```
+sudo npm install eslint -g
+eslint --init
+```
+
 ``` bash
 # install dependencies
 npm install
