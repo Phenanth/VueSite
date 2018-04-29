@@ -17,6 +17,13 @@
   </div>
   <div class="ctn">
     <div class="hd">
+      <div class="toggle-bar">
+        页面设置<span class="triangle">▶</span>
+        <div class="dp-ctn">
+          <p :click="changeTheme()">{{ turnLight }}</p>
+          <p>Sample Text.</p>
+        </div>
+      </div>
       <div class="btn-login" @click="goTo('Login')">Log In</div>
     </div>
     <div class="ctn-box">
@@ -32,7 +39,8 @@ export default {
   name: 'App',
   data: function () {
     return {
-      showPage: ''
+      showPage: '',
+      turnLight: '开灯'
     }
   },
   created: function () {
@@ -47,6 +55,9 @@ export default {
     changePage () {
       this.$store.dispatch('alterPresentPage', this.$route.path)
       this.showPage = this.$store.getters.showPresentPage
+    },
+    changeTheme() {
+      this.$store.dispatch('alterLightOn')
     }
   },
   watch: {
@@ -98,8 +109,9 @@ height: 70%;
 .nav-bar-list {
 margin-top: 0px;
 width: 130px;
-margin: 10px;
-padding: 10px;
+margin: 0px; /*参数10px效果：选中标签后标签左移*/
+padding: 13px;
+padding-right: 10px;
 color: lightgray;
 text-align: center;
 }
@@ -109,7 +121,7 @@ background-color: #404650;
 .active {
 margin: auto;
 background-color: #202126;
-border-right: 15px solid #367060;
+border-right: 20px solid #367060;
 }
 .nav-foot {
 width: 160px;
@@ -124,10 +136,37 @@ width: calc(100% - 140px);
 background-color: #202126;
 }
 .hd {
+display: flex;
 justify-content: flex-end;
 height: 45px;
 width: 100%;
 background-color: #252830;
+}
+.toggle-bar {
+position: relative; /* 作用：保持鼠标下移下拉菜单依然出现 */
+display: inline-block;
+color: lightgray;
+line-height: 45px;
+width: 100px;
+text-align: center;
+}
+.dp-ctn {
+display: none;
+position: absolute;
+width: 100px;
+margin: auto;
+background-color: #252830;
+}
+.toggle-bar:hover .dp-ctn {
+display: block;
+}
+.dp-ctn p:hover {
+display: block;
+background-color: #367060;
+}
+.triangle {
+display: inline-block;
+transform: scale(0.5) rotate(90deg);
 }
 .btn-login {
 float: right;
