@@ -18,9 +18,15 @@
   <div class="ctn">
     <div class="hd">
       <div class="toggle-bar">
-        页面设置<span class="triangle">▶</span>
+        小玩意 <span class="triangle"></span>
         <div class="dp-ctn">
-          <p :click="changeTheme()">{{ turnLight }}</p>
+          <p>Sample Text.</p>
+        </div>
+      </div>
+      <div class="toggle-bar">
+        页面设置 <span class="triangle"></span>
+        <div class="dp-ctn">
+          <p @click="changeTheme()">{{ turnLight }}</p>
           <p>Sample Text.</p>
         </div>
       </div>
@@ -39,13 +45,24 @@ export default {
   name: 'App',
   data: function () {
     return {
-      showPage: '',
-      turnLight: '开灯'
+      showPage: ''
     }
   },
   created: function () {
     this.$store.dispatch('alterPresentPage', this.$route.path)
     this.showPage = this.$store.getters.showPresentPage
+  },
+  computed: {
+    turnLight: function () {
+      let light = this.$store.getters.showLightOnState
+      let content = ''
+      if (light === true) {
+        content = '关灯'
+      } else if (light === false) {
+        content = '开灯'
+      }
+      return content
+    }
   },
   methods: {
     goTo (rt) {
@@ -160,11 +177,19 @@ background-color: #252830;
 .toggle-bar:hover .dp-ctn {
 display: block;
 }
+.dp-ctn p {
+position: relative;
+margin: 0px;
+line-height: 35px;
+font-size: 14px;
+}
 .dp-ctn p:hover {
 display: block;
-background-color: #367060;
+background-color: #404650;
 }
-.triangle {
+.triangle:after {
+content: "▶";
+color: gray;
 display: inline-block;
 transform: scale(0.5) rotate(90deg);
 }
