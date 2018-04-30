@@ -12,6 +12,7 @@
 
 Login与其他页面切换时存在因边框是否出现导致的选项错位，考虑把.active改写成边框存在但透明。
 ctn内容与hd做到hd单独置顶 ctn内容居中，考虑把hd从ctn标签中分出来。
+检查input.css内容是否有与index.css冲突的部分，每次点进login回到其他页面后nav-bar就失去导航效果了。
 
 ## Build Setup
 
