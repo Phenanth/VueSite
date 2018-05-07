@@ -28,7 +28,7 @@ export default {
 
 <style>
 
-.ctn {
+/* .ctn {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +42,7 @@ export default {
 }
 .hd {
   display: none;
-}
+} */
 h1 {
   font-weight: normal;
 }
@@ -50,125 +50,5 @@ h1 {
   text-shadow:#f3f3f3 1px 1px 0px, #b2b2b2 1px 2px 0
 }
 
-
-.input {
-  z-index: 1;
-  display: inline-block;
-  margin: 1em;
-  width: calc(100% - 2em);
-  vertical-align: top;
-}
-
-.input__field {
-  position: relative;
-  display: block;
-  float: right;
-  padding: 0.8em;
-  width: 60%;
-  border: none;
-  border-radius: 0;
-  background: #f0f0f0;
-  color: #aaa;
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-appearance: none; /* for box shadows to show on iOS */
-}
-
-.input__field:focus {
-  outline: none;
-}
-
-.input__label {
-  display: inline-block;
-  float: right;
-  padding: 0 1em;
-  width: 40%;
-  color: #6a7989;
-  font-weight: bold;
-  font-size: 70.25%;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.input__label-content {
-  position: relative;
-  display: block;
-  padding: 1.6em 0;
-  width: 100%;
-}
-
-.graphic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  fill: none;
-}
-
-.icon {
-  color: #ddd;
-  font-size: 150%;
-}
-
-/* Minoru */
-.input__field--minoru {
-  width: 100%;
-  background: #fff;
-  box-shadow: 0px 0px 0px 2px transparent;
-  color: #eca29b;
-  -webkit-transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-}
-
-.input__label--minoru {
-  padding: 0;
-  width: 100%;
-  text-align: left;
-}
-
-.input__label--minoru::after {
-  content: '';
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 4em;
-  box-shadow: 0px 0px 0px 0px;
-  color: rgba(199,152,157, 0.6);
-}
-
-.input__field--minoru:focus {
-  box-shadow: 0px 0px 0px 2px #eca29b;
-}
-
-.input__field--minoru:focus + .input__label--minoru {
-  pointer-events: none;
-}
-
-.input__field--minoru:focus + .input__label--minoru::after {
-  -webkit-animation: anim-shadow 0.3s forwards;
-  animation: anim-shadow 0.3s forwards;
-}
-
-@-webkit-keyframes anim-shadow {
-  to {
-    box-shadow: 0px 0px 100px 50px;
-      opacity: 0;
-  }
-}
-
-@keyframes anim-shadow {
-  to {
-    box-shadow: 0px 0px 100px 50px;
-      opacity: 0;
-  }
-}
-
-.input__label-content--minoru {
-  padding: 0.75em 0.15em;
-}
 
 </style>

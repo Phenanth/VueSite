@@ -18,13 +18,15 @@
   <div class="ctn">
     <div class="hd">
       <div class="toggle-bar">
-        小玩意 <span class="triangle"></span>
+        <span>小玩意</span>
+        <i class="fa fa-angle-down"></i></span>
         <div class="dp-ctn">
           <p>Sample Text.</p>
         </div>
       </div>
       <div class="toggle-bar">
-        页面设置 <span class="triangle"></span>
+        <span>页面设置</span>
+        <i class="fa fa-angle-down"></i></span>
         <div class="dp-ctn">
           <p @click="changeTheme()">{{ turnLight }}</p>
           <p>Sample Text.</p>
@@ -84,8 +86,10 @@ export default {
 </script>
 
 <style>
+
 body {
-margin: auto;
+margin: 0px;
+top: 0px;
 }
 .wrapper {
 height: 100vh;
