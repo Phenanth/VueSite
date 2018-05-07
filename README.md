@@ -14,6 +14,13 @@ Login与其他页面切换时存在因边框是否出现导致的选项错位，
 ctn内容与hd做到hd单独置顶 ctn内容居中，考虑把hd从ctn标签中分出来。
 检查input.css内容是否有与index.css冲突的部分，每次点进login回到其他页面后nav-bar就失去导航效果了。
 
+2018-05-07:
+
+Need to build the connection with database by using axios to call functions in the dbHelper.js (Using axios to link the front and the back.)
+Also need to write the express server functions (In dbHelper.js) to make responses to the front calls.
+
+![运行模式.jpg](https://upload-images.jianshu.io/upload_images/4945773-441d55a252bca92e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ## Build Setup
 
 ```

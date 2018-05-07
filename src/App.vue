@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <template>
-<div id="app" class="wrapper">
+<div id="app" class="app">
   <div class="nav">
     <div class="logo">
       <img class="img-logo" src="../static/img/logo.png" alt="Logo of the Website." width="60" height="60">
@@ -91,7 +91,7 @@ body {
 margin: 0px;
 top: 0px;
 }
-.wrapper {
+.app {
 height: 100vh;
 width: 100vw;
 display: flex;
@@ -209,6 +209,7 @@ background-color: #365850
 background-color: #367060;
 }
 .ctn-box {
+height: 80%;
 display: flex;
 justify-content: center;
 align-items: center;
