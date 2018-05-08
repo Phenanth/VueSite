@@ -43,7 +43,28 @@ export default {
       this.$refs[form].validate(valid => {
         if (valid) {
           let opt = form
-          api.doLogin(opt)
+          api.doLogin(opt).then(({
+            data
+          }) => {
+            if (!data.info) {
+              this.$message({
+                type: 'info',
+                message: 'Account not exist.'
+              })
+            }
+            if (data.success) {
+              this.$message({
+                type: 'success',
+                message: 'Login process successed.'
+              })
+              this.$router.push('/')
+            } else {
+              this.$message({
+                type: 'info',
+                message: 'Login process failed.'
+              })
+            }
+          })
         } else {
           return false
         }

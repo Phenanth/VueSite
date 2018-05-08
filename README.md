@@ -21,6 +21,10 @@ Also need to write the express server functions (In dbHelper.js) to make respons
 
 ![运行模式.jpg](https://upload-images.jianshu.io/upload_images/4945773-441d55a252bca92e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+2018-05-08
+
+Created some javascript scripts for connecting front side and the back side. Didn't do debugging job, will try afterwards.
+
 ## Build Setup
 
 ```
