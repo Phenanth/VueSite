@@ -1,10 +1,13 @@
 "use strict"
 
-const express = require('express')
-const router = require('./server/router/index.js')
-const app = express()
+const express = require('express');
+var routes = require('./router/index.js');
+var app = express();
 
-app.use('/api', router)
+app.use('/', routes);
+//app.use('/api', router)
+//const router = require('./router/index.js')
+
 
 app.use(function (req, res, next) {
 	var err = new Error('Page not found.')

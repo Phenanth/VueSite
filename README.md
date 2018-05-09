@@ -25,6 +25,11 @@ Also need to write the express server functions (In dbHelper.js) to make respons
 
 Created some javascript scripts for connecting front side and the back side. Didn't do debugging job, will try afterwards.
 
+2018-05-09
+
+Server can only work when the axios using the GET method to send data.
+Need to find the reason.
+
 ## Build Setup
 
 ```

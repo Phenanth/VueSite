@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Axios from 'axios'
+import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 axios.default.timeout = 5000
@@ -9,7 +9,7 @@ const instance = axios.create()
 instance.defaults.headers.post['Content-Type'] = 'application/json'
 
 axios.interceptors.request.use = instance.interceptors.request.use
-instance.interceptors.requestuse(config => {
+instance.interceptors.request.use(config => {
 	if (localStorage.getItem('token')) {
 		config.headers.Authorization = `token ${localStorage.getItem('token')}`
 			.replace(/(^\")|(\"$)/g, '')
@@ -27,6 +27,7 @@ instance.interceptors.response.use(response => {
 
 export default {
 	doLogin (data) {
-		return instance.post('/api/login', data)
+		// return instance.post('/api/login', data)
+		return instance.get('/api/login', data)
 	}
 }

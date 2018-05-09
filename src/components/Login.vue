@@ -40,38 +40,27 @@ export default {
   },
   methods: {
     login: function ( form ) {
-      this.$refs[form].validate(valid => {
-        if (valid) {
-          let opt = form
-          api.doLogin(opt).then(({
+        if (form.username !== '' && form.password !== '') {
+            let opt = form
+            api.doLogin(opt).then(({
             data
           }) => {
             if (!data.info) {
-              this.$message({
-                type: 'info',
-                message: 'Account not exist.'
-              })
+              alert('Account not exist!')
             }
             if (data.success) {
-              this.$message({
-                type: 'success',
-                message: 'Login process successed.'
-              })
+              console.log('Server recieved GET method.(Debugging version.)');
               this.$router.push('/')
             } else {
-              this.$message({
-                type: 'info',
-                message: 'Login process failed.'
-              })
+              alert('Login failed!')
             }
           })
         } else {
           return false
         }
-      })
+      }
     }
   }
-}
 </script>
 
 <style>
