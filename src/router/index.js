@@ -6,6 +6,7 @@ import Essay from '@/components/Essay'
 import Report from '@/components/Report'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
+import Register from '@/components/Register'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ export default new Router({
       path: '/Login',
       name: 'Login',
       component: Login
+    }, {
+      path: '/Register',
+      name: 'Register',
+      component: Register
     }
   ]
 })

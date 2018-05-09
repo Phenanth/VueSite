@@ -3,7 +3,7 @@ const express = require('express')
 const dbHelper = require('../db/dbHelper.js')
 const router = express.Router()
 
-// router.get('/login', function(req, res, next) {
+// router.post('/test', function(req, res, next) {
 // 	console.log('Login function called.')
 // 	res.json({
 // 		success: true

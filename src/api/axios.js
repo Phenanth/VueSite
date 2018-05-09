@@ -27,7 +27,9 @@ instance.interceptors.response.use(response => {
 
 export default {
 	doLogin (data) {
-		// return instance.post('/api/login', data)
-		return instance.get('/api/login', data)
+		return instance.post('/api/login', data)
+	},
+	doRegister (data) {
+		return instance.post('/api/register', data)
 	}
 }

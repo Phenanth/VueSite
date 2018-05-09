@@ -1,13 +1,16 @@
 "use strict"
 
-const express = require('express');
+const Express = require('express');
+var BodyParser = require('body-parser')
 var routes = require('./router/index.js');
-var app = express();
+var app = Express();
+
+// Change default receiving data type from 'x-www-form-urlencoded' to 'json'
+app.use(BodyParser.json());
+app.use(BodyParser.urlencoded({ extended: true }));
 
 app.use('/', routes);
-//app.use('/api', router)
-//const router = require('./router/index.js')
-
+//app.use('/api', routes)
 
 app.use(function (req, res, next) {
 	var err = new Error('Page not found.')

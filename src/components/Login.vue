@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <template>
 <div class="rt-ctn">
-  <h1 class="login-title">Login</h1>
+  <h1>Login</h1>
   <form>
     <div class="form-group">
       <label>Username</label>
@@ -15,10 +15,10 @@
     <div class="row form-gourp">
       <div class="col-md-1"></div>
       <div class="col-md-4">
-        <button class="btn btn-primary">Register</button>
+        <button class="btn btn-primary" @click="goTo('Register')">Register</button>
       </div>
       <div class="col-md-5">
-        <button class="btn btn-default" @click="login('formdata')">Log In</button>
+        <button class="btn btn-default" @click="login(formdata)">Log In</button>
       </div>
       <div class="col-md-1"></div>
     </div>
@@ -28,10 +28,12 @@
 
 <script>
 import api from '../api/axios.js'
+import router from '../router/index.js'
 export default {
   name: 'Login',
   data: function () {
     return {
+      showPage: '',
       formdata: {
         username: '',
         password: ''
@@ -40,27 +42,38 @@ export default {
   },
   methods: {
     login: function ( form ) {
-        if (form.username !== '' && form.password !== '') {
-            let opt = form
-            api.doLogin(opt).then(({
-            data
-          }) => {
-            if (!data.info) {
-              alert('Account not exist!')
-            }
-            if (data.success) {
-              console.log('Server recieved GET method.(Debugging version.)');
-              this.$router.push('/')
-            } else {
-              alert('Login failed!')
-            }
-          })
-        } else {
-          return false
+      if (form.username !== '' && form.password !== '') {
+        let opt = form
+        api.doLogin(opt).then(({
+          data
+        }) => {
+        if (!data.info) {
+          alert('Account not exist!')
         }
-      }
+        if (data.success) {
+          console.log('Account successfully signed in.')
+          router.go(0)
+          router.push('/')
+        } else {
+          alert('Login failed!')
+        }
+      })
+    } else {
+      return false
     }
+    },
+    // I will try to remove this by using goTo() in app.vue
+    // since it is a redundancy problem.
+    goTo: function (rt) {
+      router.push(rt)
+      this.changePage()
+    },
+    changePage: function () {
+      this.$store.dispatch('alterPresentPage', this.$route.path)
+      this.showPage = this.$store.getters.showPresentPage
+    },
   }
+}
 </script>
 
 <style>

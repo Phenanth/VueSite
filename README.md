@@ -2,6 +2,42 @@
 
 > 学习VueJS框架并搭建个人网站的练习工程。
 
+## Build Setup
+
+```
+# If you are having problems for the eslint, try the following commands in your project file:
+sudo npm install eslint -g
+eslint --init
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# run server
+cd server
+node server.js
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run unit tests
+npm run unit
+
+# run e2e tests
+npm run e2e
+
+# run all tests
+npm test
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
 ## 进度更新
 
 2018-04-29:
@@ -30,34 +66,11 @@ Created some javascript scripts for connecting front side and the back side. Did
 Server can only work when the axios using the GET method to send data.
 Need to find the reason.
 
-## Build Setup
+Later in this day:
 
-```
-# If you are having problems for the eslint, try the following commands in your project file:
-sudo npm install eslint -g
-eslint --init
+Validated the data (username, password) are transfered correctly.
+I wonder why `this.$router.push()` rearly worked in `Login.vue` and `Register.vue`
 
-``` bash
-# install dependencies
-npm install
+Also optimized the router so when login or register is clicked, the page will instantly jump to the target webpage.
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+I think I will try to connect database and store the users tomorrow. if I have extra time, I will also do some optimizations in the vuex.
