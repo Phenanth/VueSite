@@ -74,3 +74,7 @@ I wonder why `this.$router.push()` rearly worked in `Login.vue` and `Register.vu
 Also optimized the router so when login or register is clicked, the page will instantly jump to the target webpage.
 
 I think I will try to connect database and store the users tomorrow. if I have extra time, I will also do some optimizations in the vuex.
+
+2018-05-10
+
+Started work on the database, connected with it.

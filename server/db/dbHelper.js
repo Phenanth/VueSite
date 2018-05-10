@@ -1,9 +1,11 @@
 'use strict'
 const express = require('express')
+const db = require('./db/connect.js');
 const createToken = require('../middleware/createToken.js')
 const checkToken = require('../middleware/checkToken.js')
 const sha1 = require('sha1')
 
+// For testing, need to complete afterwards.
 const Register = (req, res) => {
 	console.log('Operation: Register. ' + req.body.username + ', ' + req.body.password);
 	res.json({

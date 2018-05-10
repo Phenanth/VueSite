@@ -3,6 +3,7 @@
 const Express = require('express');
 var BodyParser = require('body-parser')
 var routes = require('./router/index.js');
+const db = require('./db/connect.js')
 var app = Express();
 
 // Change default receiving data type from 'x-www-form-urlencoded' to 'json'
