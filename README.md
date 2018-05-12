@@ -86,3 +86,6 @@ Hot overload effect of vuejs failed, need to check why.
 Today worked on the login and the register SQL query, may need to optimize the way accounts were stored in the database, and the validating of an e-mail adress during the register period.
 
 Afterwards I will try to design the loged-in UI and the Login & Register page UI, maybe even the page to show user's information.
+
+Re-install the vue-cli, and the hot overload effect was working again.
+
