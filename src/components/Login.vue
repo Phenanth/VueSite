@@ -15,11 +15,11 @@
     <div class="row form-gourp">
       <div class="col-md-1"></div>
       <div class="col-md-4">
-        <button class="btn btn-primary" @click="goTo('Register')">Register</button>
+        <button class="btn btn-primary" @click="login(formdata)">Log In</button>
       </div>
       <div class="col-md-5">
-        <button class="btn btn-default" @click="login(formdata)">Log In</button>
-      </div>
+        <button class="btn btn-default" @click="goTo('Register')">Register</button>
+        </div>
       <div class="col-md-1"></div>
     </div>
   </form>
@@ -47,16 +47,18 @@ export default {
         api.doLogin(opt).then(({
           data
         }) => {
-        if (!data.info) {
-          alert('Account not exist!')
-        }
-        if (data.success) {
-          console.log('Account successfully signed in.')
-          router.go(0)
-          router.push('/')
-        } else {
-          alert('Login failed!')
-        }
+          console.log(data);
+          if (data.info == 404) {
+            alert('Account not exist!')
+          } else {
+            if (data.success) {
+              alert('Account Loged in.');
+              router.go(0)
+              router.push('/')
+            } else {
+              alert('Wrong password!')
+            }
+          }
       })
     } else {
       return false

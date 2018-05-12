@@ -18,6 +18,8 @@
     "babel": "^6.23.0",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.1.1",
+    "charenc": "^0.0.2",
+    "crypt": "^0.0.2",
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
     "mysql": "^2.15.0",

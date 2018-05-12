@@ -78,3 +78,11 @@ I think I will try to connect database and store the users tomorrow. if I have e
 2018-05-10
 
 Started work on the database, connected with it.
+
+2018-05-12
+
+Hot overload effect of vuejs failed, need to check why.
+
+Today worked on the login and the register SQL query, may need to optimize the way accounts were stored in the database, and the validating of an e-mail adress during the register period.
+
+Afterwards I will try to design the loged-in UI and the Login & Register page UI, maybe even the page to show user's information.

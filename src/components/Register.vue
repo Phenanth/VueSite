@@ -44,15 +44,16 @@ export default {
         api.doRegister(opt).then(({
           data
         }) => {
-          if (!data.info) {
-            console.log('Account existed.')
-          }
-          if (data.success) {
-            console.log('Account successfully signed up.')
-            router.go(0)
-            router.push('/')
+          if (data.info == 504) {
+            alert('Duplicated account!')
           } else {
-            console.log('Sign up failed.')
+            if (data.success) {
+              alert('Account registed.')
+              router.go(0)
+              router.push('/')
+            } else {
+              alert('Sign up failed.')
+            }
           }
         })
       } else {
