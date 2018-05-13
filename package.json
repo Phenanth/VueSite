@@ -22,6 +22,7 @@
     "crypt": "^0.0.2",
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
+    "jsonwebtoken": "^8.2.1",
     "mysql": "^2.15.0",
     "querystring": "^0.2.0",
     "sha1": "^1.1.1",

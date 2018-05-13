@@ -89,3 +89,13 @@ Afterwards I will try to design the loged-in UI and the Login & Register page UI
 
 Re-install the vue-cli, and the hot overload effect was working again.
 
+2018-05-13
+
+Today's work:
+- Created localStorage after loged in. (Done)
+- Shared the token in the vuex. (Done)
+- If time's enough, design the loged in UI. (Done)
+
+But there are some problems, such as the vuex-store acctually is not effective in sharing the state of token because whether the user is loged in is judged by a compute attribution which returns the data in the localStorage.
+
+Next time I may work on the authentication of the token, in whether it is a correct token aspect and if it is still in time limit aspect (For now, the user will only be logged out mannually.) I also need to optimize the `createToken.js` so that it won't return the same token all the time.

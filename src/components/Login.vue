@@ -47,22 +47,21 @@ export default {
         api.doLogin(opt).then(({
           data
         }) => {
-          console.log(data);
           if (data.info == 404) {
             alert('Account not exist!')
           } else {
             if (data.success) {
-              alert('Account Loged in.');
+              this.$store.dispatch('storeToken', data.token)
               router.go(0)
               router.push('/')
             } else {
               alert('Wrong password!')
             }
           }
-      })
-    } else {
-      return false
-    }
+        })
+      } else {
+        return false
+      }
     },
     // I will try to remove this by using goTo() in app.vue
     // since it is a redundancy problem.

@@ -59,20 +59,21 @@ const Login = (req, res) => {
 			res.json({
 				info: 404,
 				success: false
-			})
+			});
 		} else {
 			if (req.body.password == results[0].password) {
 				console.log('Login successed.');
 				res.json({
 					info: 200,
-					success: true
+					success: true,
+					token: createToken(req.body.username)
 				});
 			} else {
 				console.log('Login failed.');
 				res.json({
 					info: 200,
 					success: false
-				})
+				});
 			}
 		}
 	});

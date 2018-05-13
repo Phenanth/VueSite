@@ -32,8 +32,15 @@
           <p>Sample Text.</p>
         </div>
       </div>
-      <div class="btn-login" @click="goTo('Login')">Log In</div>
+
+      <div v-if="isLogedIn">
+        <div class="btn-login" @click="doLogout()">Log Out</div>
+      </div>
+      <div v-else>
+        <div class="btn-login" @click="goTo('Login')">Log In</div>
+      </div>
     </div>
+
     <div class="ctn-box">
      <router-view/>
     </div>
@@ -64,12 +71,20 @@ export default {
         content = '开灯'
       }
       return content
+    },
+    isLogedIn: function () {
+      return localStorage.getItem('token') || this.$store.getters.showTokenState
     }
   },
   methods: {
     goTo (rt) {
       router.push(rt)
       this.changePage()
+    },
+    doLogout () {
+      this.$store.dispatch('logout');
+      router.go(0)
+      router.push('/')
     },
     changePage () {
       this.$store.dispatch('alterPresentPage', this.$route.path)

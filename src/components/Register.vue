@@ -48,11 +48,10 @@ export default {
             alert('Duplicated account!')
           } else {
             if (data.success) {
-              alert('Account registed.')
               router.go(0)
               router.push('/')
             } else {
-              alert('Sign up failed.')
+              alert('Registering failed.')
             }
           }
         })
