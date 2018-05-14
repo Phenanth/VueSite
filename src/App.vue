@@ -3,7 +3,7 @@
 <div id="app" class="app">
   <div class="nav">
     <div class="logo">
-      <img class="img-logo" src="../static/img/logo.png" alt="Logo of the Website." width="60" height="60">
+      <img class="img-logo" src="../static/img/logo.png" alt="Logo of the Website." width="60" height="60" @click="goTo('User')">
     </div>
     <div class="nav-bar">
       <li class="nav-bar-list fn-hidden"></li>

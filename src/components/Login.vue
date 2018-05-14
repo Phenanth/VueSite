@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <template>
 <div class="rt-ctn">
   <h1>Login</h1>
@@ -39,6 +38,16 @@ export default {
         password: ''
       }
     }
+  },
+  created: function () {
+    api.isLogin().then(({
+      data
+    }) => {
+      if (data.success) {
+        alert(data.message)
+        router.push('/')
+      }
+    })
   },
   methods: {
     login: function ( form ) {

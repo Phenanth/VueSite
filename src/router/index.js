@@ -7,6 +7,7 @@ import Report from '@/components/Report'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
+import User from '@/components/User'
 
 Vue.use(Router)
 
@@ -40,6 +41,10 @@ export default new Router({
       path: '/Register',
       name: 'Register',
       component: Register
+    }, {
+      path: '/User',
+      name: 'User',
+      component: User
     }
   ]
 })

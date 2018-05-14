@@ -1,5 +1,6 @@
 'use strict'
 const express = require('express')
+const router = express.Router()
 const db = require('./connect.js');
 const createToken = require('../middleware/createToken.js')
 const checkToken = require('../middleware/checkToken.js')

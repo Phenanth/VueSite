@@ -99,3 +99,21 @@ Today's work:
 But there are some problems, such as the vuex-store acctually is not effective in sharing the state of token because whether the user is loged in is judged by a compute attribution which returns the data in the localStorage.
 
 Next time I may work on the authentication of the token, in whether it is a correct token aspect and if it is still in time limit aspect (For now, the user will only be logged out mannually.) I also need to optimize the `createToken.js` so that it won't return the same token all the time.
+
+2018-05-14
+
+Today's work:
+- Added logic to judge if the token is still in time or exists.
+- Created "User-Info" page.
+- Added logic in "User-Info" & "Login" page.
+Which bans the user from using the page when user is not logged (former case) or logged in (latter case).
+
+Some problems:
+- It is not able to refresh the token state in vuex
+Once I wanted to refresh it in `App.vue`, the log-out logic will be not effective (maybe it's because I also use vuex to act as the log-out logic.)
+
+It's won't be a big deal if I don't use the veux to share the token, but it is exactly a redundancy, which is annoying.
+
+Maybe I will start to design the home page, which means I will add some test-data into the database and select them out to display them, It may seems like `nian`, I haven't decided yet.
+
+Or I will optimize the registering logic and add some validation to it, cause it is too simple now.
