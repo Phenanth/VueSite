@@ -117,3 +117,9 @@ It's won't be a big deal if I don't use the veux to share the token, but it is e
 Maybe I will start to design the home page, which means I will add some test-data into the database and select them out to display them, It may seems like `nian`, I haven't decided yet.
 
 Or I will optimize the registering logic and add some validation to it, cause it is too simple now.
+
+Laterly I finished the validating logic,and there are some problems I met:
+- `emailer.js` will always return a valid code either the mail was sent or not.
+Which means I can't transfer the error state of the email sending process, so some times the user will be puzzled: why I can't get my validating email? (Sometimes it's because the email adress is not valid, but I can't transfer the state of the email-sending so users usually won't know this.)
+
+And There is still a lot things to do with optimizing the content of the validating email. Also need to make a decision on what I want to display on the home page or on other components.

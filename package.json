@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "jsonwebtoken": "^8.2.1",
     "mysql": "^2.15.0",
+    "nodemailer": "^4.6.4",
     "querystring": "^0.2.0",
     "sha1": "^1.1.1",
     "vue": "^2.5.2",

@@ -11,14 +11,24 @@
       <label>Password</label>
       <input type="Password" class="form-control" placeholder="Password" v-model="formdata.password">
     </div>
+    <div class="row">
+      <div class="col-md-7 form-group">
+        <label>Validation</label>
+        <input type="text" class="form-control" placeholder="Validate code" v-model="formdata.validCode">
+      </div>
+      <div class="col-md-4 btn-valid">
+        <button class="btn btn-info" @click="sendValidCode()">Send Email</button>
+      </div>
+    </div>
     <div class="row form-gourp">
       <div class="col-md-1"></div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <button class="btn btn-primary" @click="regester(formdata)">Register</button>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-4">
         <button class="btn btn-default" @click="reset()">Reset</button>
       </div>
+      
       <div class="col-md-1"></div>
     </div>
   </form>
@@ -33,30 +43,61 @@ export default {
     return {
       formdata: {
         username: '',
-        password: ''
+        password: '',
+        validCode: ''
+      },
+      validData: {
+        username: '',
+        validCode: ''
       }
     }
   },
   methods: {
     regester: function ( form ) {
-      if (form.username !== '' && form.password !== '') {
-        let opt = form
-        api.doRegister(opt).then(({
+      if (this.validData.validCode == form.validCode && form.validCode !== '') {
+        console.log(form.username, )
+        if (form.username == this.validData.username) {
+          let opt = form
+          api.doRegister(opt).then(({
+            data
+          }) => {
+            if (data.info == 504) {
+              alert('Duplicated account!')
+            } else {
+              if (data.success) {
+                router.go(0)
+                router.push('/')
+              } else {
+                alert('Registering failed.')
+              }
+            }
+          })
+        } else {
+          alert('Please keep the email as same as the one you choose to send valid code.')
+        }
+      } else {
+        alert('Please input the correct valid code.');
+      }
+    },
+    sendValidCode: function () {
+      if (this.formdata.username !== '') {
+        this.validData.username = this.formdata.username
+        // Remember to use object to transfer data.
+        let opt =  {
+          username: this.formdata.username
+        }
+        api.sendValidCode(opt).then(({
           data
         }) => {
-          if (data.info == 504) {
-            alert('Duplicated account!')
+          if (data.success) {
+            this.validData.validCode = data.validData
+            console.log(this.validData)
           } else {
-            if (data.success) {
-              router.go(0)
-              router.push('/')
-            } else {
-              alert('Registering failed.')
-            }
+            alert(data.message)
           }
         })
       } else {
-        return ;
+        alert('Please input the email.')
       }
     },
     reset: function () {
@@ -79,5 +120,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.btn-valid {
 }
 </style>

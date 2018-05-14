@@ -34,5 +34,8 @@ export default {
 	},
 	isLogin () {
 		return instance.get('/api/isLogin')
+	},
+	sendValidCode (data) {
+		return instance.post('/api/sendValidCode', data)
 	}
 }
