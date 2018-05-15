@@ -7,10 +7,10 @@
     </div>
     <div class="nav-bar">
       <li class="nav-bar-list fn-hidden"></li>
-      <li class="nav-bar-list" :class="{ active : this.showPage === '/Dairy' }" @click="goTo('Dairy')">日记</li>
-      <li class="nav-bar-list" :class="{ active : this.showPage === '/Note' }" @click="goTo('Note')">笔记</li>
-      <li class="nav-bar-list" :class="{ active : this.showPage === '/Essay' }" @click="goTo('Essay')">杂记</li>
-      <li class="nav-bar-list" :class="{ active : this.showPage === '/Report' }" @click="goTo('Report')">报告</li>
+<!--       <li class="nav-bar-list" :class="{ active : this.showPage === '/Dairy' }" @click="goTo('Dairy')">日记</li>
+<li class="nav-bar-list" :class="{ active : this.showPage === '/Note' }" @click="goTo('Note')">笔记</li>
+<li class="nav-bar-list" :class="{ active : this.showPage === '/Essay' }" @click="goTo('Essay')">杂记</li>
+<li class="nav-bar-list" :class="{ active : this.showPage === '/Report' }" @click="goTo('Report')">报告</li> -->
       <li class="nav-bar-list" :class="{ active : this.showPage === '/' }" @click="goTo('/')">主页</li>
     </div>
     <div class="nav-foot"></div>
@@ -105,6 +105,7 @@ export default {
 body {
 margin: 0px;
 top: 0px;
+background-color: #202126;
 }
 .app {
 height: 100vh;
@@ -113,7 +114,6 @@ display: flex;
 flex-direction: row;
 justify-content: flex-start;
 overflow-x: hidden;
-overflow-y: hidden;
 }
 li {
 text-align: center;
@@ -176,7 +176,7 @@ display: flex;
 justify-content: flex-end;
 height: 45px;
 width: 100%;
-background-color: #252830;
+background-color: #367060;
 }
 .toggle-bar {
 position: relative; /* 作用：保持鼠标下移下拉菜单依然出现 */
@@ -191,7 +191,7 @@ display: none;
 position: absolute;
 width: 100px;
 margin: auto;
-background-color: #252830;
+background-color: #367060;
 }
 .toggle-bar:hover .dp-ctn {
 display: block;
@@ -204,7 +204,7 @@ font-size: 14px;
 }
 .dp-ctn p:hover {
 display: block;
-background-color: #404650;
+background-color: #215245;
 }
 .triangle:after {
 content: "▶";
@@ -218,10 +218,10 @@ color: lightgray;
 line-height: 45px;
 width: 100px;
 text-align: center;
-background-color: #365850
+background-color: #42052f;
 }
 .btn-login:hover {
-background-color: #367060;
+background-color: #710a35;
 }
 .ctn-box {
 height: 80%;
@@ -232,5 +232,14 @@ color: lightgray;
 }
 .fn-hidden {
 visibility: hidden;
+}
+.btn-default {
+  color: lightgray;
+  border-color: #202126;
+  background-color:  #367060;
+}
+button.btn-default:hover {
+  color: white;
+  background-color: #4d8676;
 }
 </style>

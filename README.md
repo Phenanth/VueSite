@@ -123,3 +123,9 @@ Laterly I finished the validating logic,and there are some problems I met:
 Which means I can't transfer the error state of the email sending process, so some times the user will be puzzled: why I can't get my validating email? (Sometimes it's because the email adress is not valid, but I can't transfer the state of the email-sending so users usually won't know this.)
 
 And There is still a lot things to do with optimizing the content of the validating email. Also need to make a decision on what I want to display on the home page or on other components. 
+
+### 2018-05-15
+
+- Designed the `Home.vue` and `U.I.vue` and some data tables.
+
+Need to fix the nav-bar and the header.
