@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'webAdmin',
 	password: 'byxiaowu9',
-	database: 'test'
+	database: 'myWeb'
 });
 
 console.log('MySQL database connected.');
